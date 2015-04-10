@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Jquery-eatoast : A simple jQuery based toast plugin">
+    <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+    <link rel="stylesheet" href="src/jquery.eatoast.min.css">
+    <style>
+	button.view{
+	    background: none repeat scroll 0 0 #888;
+	    border: medium none;
+	    border-radius: 2px;
+	    color: #ffffff;
+	    font-weight: bold;
+	    line-height: 20px;
+	    font-size: 12px;
+	    margin: 0 20px;
+	    cursor: pointer;
+	    -webkit-transition: box-shadow 0.2s ease-out;
+	    -moz-transition: box-shadow 0.2s ease-out;
+	    -o-transition: box-shadow 0.2s ease-out;
+	    transition: box-shadow 0.2s ease-out;
+	}
+	button.view:hover{
+		-webkit-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.3);
+		-moz-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.3);
+		-o-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.3);
+		box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.3);
+	}
+	button:focus{
+		outline: none;
+	}
+    </style>
+	<title>jquery-eatoast DEMO</title>
+</head>
+<body>
+	    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/HakurouKen/jquery-eatoast">View on GitHub</a>
+          <h1 id="project_title">Jquery-eatoast</h1>
+          <h2 id="project_tagline">A simple jQuery based toast plugin</h2>
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/HakurouKen/jquery-eatoast/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/HakurouKen/jquery-eatoast/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+      	<h2>Basic</h2>
+      	<dl>
+      		<dt>
+      			<h4>Default <button class="view">view</button></h4>
+      		</dt>
+      		<dd>
+      			<pre><code>$.toast.show("This is a default toast.");</code></pre>
+      		</dd>
+
+      		<dt>
+      			<h4>Success <button class="view">view</button></h4>
+      		</dt>
+      		<dd>
+      			<pre><code>$.toast.success("This is a success toast &gt;_&lt;");</code></pre>
+      		</dd>
+      		
+      		<dt>
+      			<h4>Info <button class="view">view</button></h4>
+      		</dt>
+      		<dd>
+      			<pre><code>$.toast.info("This is a info toast.");</code></pre>
+      		</dd>
+
+      		<dt>
+      			<h4>Warning <button class="view">view</button></h4>
+      		</dt>
+      		<dd>
+      			<pre><code>$.toast.warn("This is a warning toast...");</code></pre>
+      		</dd>
+
+      		<dt>
+      			<h4>Danger <button class="view">view</button></h4>
+      		</dt>
+      		<dd>
+      			<pre><code>$.toast.danger("This is a danger toast!!");</code></pre>
+      		</dd>
+      	</dl>
+      	<br/>
+      	<h2>Custom</h2>
+      	<dl>
+      		<dt><h4>SlideIn <button class="view">view</button></h4></dt>
+      		<dd>
+<pre><code>$.toast.show({
+	animate: 'slide',
+	text: 'This text will slide in'
+});</code></pre>
+      		</dd>
+
+      		<dt><h4>Close button <button class="view">view</button></h4></dt>
+      		<dd>
+<pre><code>$.toast.show({
+	animate: 'slide',
+	autoclose: false,
+	closeBtn: true,
+	style: 'warn',
+	text: 'This text will not close until you click close button.'
+});</code></pre>
+      		</dd>
+      		
+      		<dt><h4>Align &amp; Position <button class="view">view</button></h4></dt>
+      		<dd>
+<pre><code>$.toast.show({
+	align: 'bottom',
+	position: '10%',
+	text: 'This text will fix at bottom.'
+});</code></pre>
+      		</dd>
+
+      		<dt><h4>Others <button class="view">view</button></h4></dt>
+      		<dd>
+<pre><code>$.toast.show({
+	duration: 5000,
+	color: '#DDD',
+	background: '#333',
+	border: 'none',
+	opacity: '1',
+	speed: 'slow',
+	text: 'Many other options...'
+});</code></pre>
+      		</dd>
+      	</dl>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Jquery-eatoast maintained by <a href="https://github.com/HakurouKen">HakurouKen</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+	<script src="src/lib/jquery-1.11.2.min.js"></script>
+	<script src="src/jquery.eatoast.min.js"></script>
+	<script type="text/javascript">
+		$('button.view').click(function(){
+			var code = $(this).parents('dt').next().find('code').html().trim();
+			(new Function( 'return ' + code ))();
+		})
+	</script>
+</body>
+</html>
