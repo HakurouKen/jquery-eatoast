@@ -17,7 +17,7 @@
 			width: 'auto',
 			animate: 'fade',
 			align: 'top',
-			speed: 'normal',
+			speed: 'fast',
 			opacity: 0.9,
 			position: '20%'
 		};
