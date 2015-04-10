@@ -85,7 +85,7 @@
 						opacity: config.opacity
 					});
 				closeAnimation = function() {
-					$wrapper.fadeOut('normal');
+					$wrapper.fadeOut(config.speed);
 				};
 				break;
 		}
