@@ -21,7 +21,6 @@
             opacity: 0.9,
             position: '20%'
         };
-        var config;
 
         if ($.isPlainObject(config)) {
             config = $.extend(_config, config);
@@ -40,11 +39,11 @@
         var totalHeight = config.container === document.body ? $(window).height : $(config.container).height();
         if ($.type(config.position) === 'string') {
             if (config.position.indexOf('%') === -1) {
-                config.position = (parseInt(config.position) / totalHeight * 100) >> 0
+                config.position = (parseInt(config.position) / totalHeight * 100) >> 0;
             }
             config.position = isNaN(config.position) ? '20%' : config.position.toString();
         } else if ($.isNumber(config.position)) {
-            config.position = (config.position / totalHeight * 100) >> 0
+            config.position = (config.position / totalHeight * 100) >> 0;
         }
         return config;
     }
@@ -76,8 +75,8 @@
             case 'fade':
             default:
                 $wrapper.css({
-                	opacity: 0,
-                	top: config.align === 'top' ? config.position : (100 - parseInt(config.position) + "%")
+                    opacity: 0,
+                    top: config.align === 'top' ? config.position : (100 - parseInt(config.position) + "%")
                 })
                     .show()
                     .css({
@@ -126,7 +125,7 @@
         $wrapper.css(config.align, config.position);
         toastAnimation($wrapper, config);
         return $wrapper;
-    }
+    };
 
     $.each(['default', 'success', 'info', 'warn', 'danger'], function (i, prop) {
         toast[prop] = function (config) {
@@ -138,11 +137,11 @@
                 opt = {
                     style: prop,
                     text: config
-                }
+                };
             }
 
             return toast.show(opt);
-        }
+        };
     });
 
     $.extend({
